@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Home</servlet-name>
+    <servlet-class>lab2task2.Home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/lab2task2/Home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Form1</servlet-name>
+    <servlet-class>lab2task2.Form1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Form1</servlet-name>
+    <url-pattern>/lab2task2/Form1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Form2</servlet-name>
+    <servlet-class>lab2task2.Form2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Form2</servlet-name>
+    <url-pattern>/lab2task2/Form2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Form3</servlet-name>
+    <servlet-class>lab2task2.Form3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Form3</servlet-name>
+    <url-pattern>/lab2task2/Form3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Form4</servlet-name>
+    <servlet-class>lab2task2.Form4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Form4</servlet-name>
+    <url-pattern>/lab2task2/Form4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Form5</servlet-name>
+    <servlet-class>lab2task2.Form5</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Form5</servlet-name>
+    <url-pattern>/lab2task2/Form5</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FormFinal</servlet-name>
+    <servlet-class>lab2task2.FormFinal</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FormFinal</servlet-name>
+    <url-pattern>/lab2task2/FormFinal</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SubmitClicked</servlet-name>
+    <servlet-class>lab2task2.SubmitClicked</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitClicked</servlet-name>
+    <url-pattern>/lab2task2/SubmitClicked</url-pattern>
+  </servlet-mapping>
+  
+<servlet>
+        <servlet-name>ErrorServlet</servlet-name>
+        <servlet-class>lab2task2.ErrorServlet</servlet-class>
+</servlet>
+<!-- servlet mappings -->
+<servlet-mapping>
+        <servlet-name>ErrorServlet</servlet-name>
+        <url-pattern>/lab2task2/ErrorServlet</url-pattern>
+</servlet-mapping>
+  
+  <error-page>
+        <location>/lab2task2/ErrorServlet</location>
+    </error-page>
+
+    <!-- define specific error code handler -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/lab2task2/ErrorServlet</location>
+    </error-page>
+
+    <!-- define specific error exception handler -->
+    <error-page>
+        <exception-type>java.lang.UnsupportedOperationException</exception-type>
+       <location>/lab2task2/ErrorServlet</location>
+    </error-page>
+
+</web-app>

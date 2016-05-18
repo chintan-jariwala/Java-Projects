@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="compile" name="ser422_2">
+	<target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+	
+    <target name="compile" depends="init">
+    	<javac
+    	srcdir="src/lab2task2"
+       	destdir="build/classes">
+    		<classpath>
+    			<fileset dir="lib" includes="*.jar"/>
+    		</classpath>
+		</javac>
+	</target>
+	
+	<target name="build" depends="compile">
+		<mkdir dir="ser422_2"/>
+		<mkdir dir="ser422_2/WEB-INF"/>
+		<mkdir dir="ser422_2/lab2task2"/>
+		<copy todir="ser422_2/WEB-INF">
+			<fileset dir="." includes="lib/**" />
+		</copy>
+		<copy todir="ser422_2/WEB-INF">
+			<fileset dir="build" includes="/**" />
+		</copy>
+		<copy todir="ser422_2">
+			<fileset dir="resources" includes="index.html" />
+		</copy>
+		<copy todir="ser422_2/lab2task2">
+			<fileset dir="resources" includes="Register.html"/>
+		</copy>
+		<copy file="web.xml" tofile="ser422_2/WEB-INF/web.xml"/>
+  </target>
+  
+    <target name="clean">
+        <delete dir="build/classes"/>
+    </target>
+	
+    <target name="war" description="Bundles the application as a WAR file" depends="clean, build">
+              	    <mkdir dir="ser422_2/WEB-INF/classes"/>
+              	     
+              	    <copy includeemptydirs="false" todir="ser422_2/WEB-INF/classes">
+              	            <fileset dir="build/classes">
+              	            <include name="**/*.class"/>
+              	            </fileset>
+              	    </copy>
+              	     
+              	    <war destfile="ser422_2.war"
+              	        basedir="ser422_2"
+              	        needxmlfile="false">
+              	    </war>
+              	</target>
+</project>
